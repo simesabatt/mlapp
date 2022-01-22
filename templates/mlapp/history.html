@@ -1,0 +1,38 @@
+{% extends 'mlapp/base.html' %}
+
+{% block title %}顧客一覧{% endblock %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 20px;">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>登録日</th>
+        <th>氏名</th>
+        <th>年齢</th>
+        <th>学歴</th>
+        <th>残高</th>
+        <th>審査結果</th>
+        <th>信頼度</th>
+      </tr>
+    </thead>
+      <tbody>
+    {% for customer in customers %}
+      <tr>
+        <td>{{customer.id}}</td>
+        <td>{{customer.registered_date}}</td>
+        <td>{{customer.last_name}}{{customer.first_name}}</td>
+        <td>{{customer.age}}</td>
+        <td>{{customer.education}}</td>
+        <td>{{customer.limit_balance}}</td>
+        <td>{% if customer.result == 0 %}審査に落ちました{% elif customer.result == 1 %}審査に受かりました{%  else %}None{% endif %}</td>
+        <td>{{customer.proba|floatformat:2}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock%}

@@ -1,0 +1,18 @@
+{% extends 'mlapp/base.html' %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 20px;">
+  <h5 style="text-align: center;">顧客をリストに新規登録するか、過去の顧客を確認するか選んでください</h5>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="col s8" style="text-align: center;">
+    <!-- 入力フォーム遷移ボタン -->
+    <a href="/input_form"><button class="btn btn-primary" type="button" name="input" >新規顧客をリストに追加する。</button></a>
+    <!-- 顧客リスト一覧遷移ボタン -->
+    <a href="/history"><button class="btn btn-primary" type="button" name="history">顧客リストを確認する。</button></a>
+  </div>
+</div>
+</div>
+
+{% endblock %}
