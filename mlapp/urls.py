@@ -8,4 +8,5 @@ urlpatterns = [
     path('history/', views.history, name='history'),
     path('login/', views.Login.as_view(), name='login'), # 追加
     path('logout/', views.Logout.as_view(), name='logout'), # 追加
+    path('signup', views.signup, name='signup'), # 追加
 ]

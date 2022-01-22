@@ -16,6 +16,8 @@
         <th>残高</th>
         <th>審査結果</th>
         <th>信頼度</th>
+            <!-- 追加 -->
+        <th>削除ボタン</th>
       </tr>
     </thead>
       <tbody>
@@ -29,6 +31,9 @@
         <td>{{customer.limit_balance}}</td>
         <td>{% if customer.result == 0 %}審査に落ちました{% elif customer.result == 1 %}審査に受かりました{%  else %}None{% endif %}</td>
         <td>{{customer.proba|floatformat:2}}</td>
+            <!-- 追加 -->
+        <td><form class="delete" method="POST">{% csrf_token %}
+            <button class="btn btn-primary" type="submit" name="d_id" value={{customer.id}}>削除</button></form>
       </tr>
     {% endfor %}
     </tbody>

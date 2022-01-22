@@ -8,8 +8,16 @@
   <body>
     <nav class="navbar navbar-light" style="background-color: #00b9f1;">
       <span class="navbar-brand mb-0 h1">ローン審査アプリ</span>
+      <!-- ログアウト機能の追加 -->
+      {% if user.is_authenticated %}
+      <span style="font-size:15px; text-align: right;">
+       <!-- ログアウトのURLに移動するように処理 -->
+       <a href="{% url 'logout' %}" style="color:white; text-decoration: underline;">
+        こんにちは、{{ user.username}}さん
+        </a>
+      </span>
+      {% endif %}
     </nav>
-  </div>
 
     <div class="contents" style="margin:0 20px">
       {% block content %}
