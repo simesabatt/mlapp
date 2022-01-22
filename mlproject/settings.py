@@ -1,3 +1,4 @@
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,5 +123,5 @@ LOGOUT_URL='logout'
 LOGOUT_REDIRECT_URL='login'
 
 # Activate Django-Heroku.
-import django_heroku
+
 django_heroku.settings(locals())
